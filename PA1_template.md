@@ -127,7 +127,7 @@ StepsByInterval <- aggregate (steps ~ interval, act, mean, na.rm=TRUE)
 plot(StepsByInterval$interval, StepsByInterval$steps, pch = 20, xlab = "Time Intervals (5 minutes)", ylab = "Number of steps", type="l", col="blue", main = "The average number of steps taken")
 ```
 
-![plot of chunk Steps by interval](figure/Steps by interval-1.png)
+![plot of chunk Steps_by_interval](figure/Steps_by_interval-1.png)
 
 
 Observations:
@@ -246,7 +246,7 @@ hist(NewNumOfStepsEachDays$steps, col="blue", breaks=25, labels=TRUE,
      main="Distribution of Total Number of Steps Taken Each Day")
 ```
 
-![plot of chunk new histogram](figure/new histogram-1.png)
+![plot of chunk new_histogram](figure/new_histogram-1.png)
 
 ```r
 NewMeanTotalNumOfStepsPerDay <- mean(NewNumOfStepsEachDays$steps, na.rm=TRUE)
@@ -303,7 +303,7 @@ ggplot(StepsByInterval, aes(x =interval , y=steps, color=daytype)) +
   geom_line() + facet_wrap(~ daytype, ncol = 1, nrow=2)
 ```
 
-![plot of chunk panel plot](figure/panel plot-1.png)
+![plot of chunk panel_plot](figure/panel_plot-1.png)
 
 ```r
 StepsByInterval[StepsByInterval$steps==max(StepsByInterval$steps) & StepsByInterval$daytype == 'Weekday',]

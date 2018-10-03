@@ -68,7 +68,7 @@ The most common range of steps is between 10000 and 11000 steps, which occurred 
 
 Calculate using R mean and median functions
 
-``` {r MeanToalNumOfSteps }
+``` {r MeanToalNumOfSteps}
 
 MeanTotalNumOfStepsPerDay <- mean(NumOfStepsEachDays$steps, na.rm=TRUE)
 MeanTotalNumOfStepsPerDay
@@ -86,7 +86,7 @@ Make a time series plot (i.e. type="l") of the 5-minute interval (x-axis) and th
 
 
 
-``` {r Steps by interval}
+``` {r Steps_by_interval}
 StepsByInterval <- aggregate (steps ~ interval, act, mean, na.rm=TRUE)
 
 plot(StepsByInterval$interval, StepsByInterval$steps, pch = 20, xlab = "Time Intervals (5 minutes)", ylab = "Number of steps", type="l", col="blue", main = "The average number of steps taken")
@@ -153,7 +153,7 @@ newact <- act
 ```
 
 4 Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
-``` {r new histogram}
+``` {r new_histogram}
 NewNumOfStepsEachDays <- aggregate (steps ~ date, newact, sum, na.rm=TRUE)
 head(NewNumOfStepsEachDays)
 hist(NewNumOfStepsEachDays$steps, col="blue", breaks=25, labels=TRUE,
@@ -186,7 +186,7 @@ head(newact)
 ```
 2 Make a panel plot containing a time series plot (i.e. type="l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
-``` {r panel plot}
+``` {r panel_plot}
 StepsByInterval <- aggregate (steps ~ interval + daytype, newact, mean, na.rm=TRUE)
 
 ggplot(StepsByInterval, aes(x =interval , y=steps, color=daytype)) +
