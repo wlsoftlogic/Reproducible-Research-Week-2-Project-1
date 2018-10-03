@@ -20,9 +20,58 @@ Process/transform the data (if necessary) into a format suitable for your analys
 
 ```r
 library(markdown)
+```
+
+```
+## Warning: package 'markdown' was built under R version 3.4.4
+```
+
+```r
 library(knitr)
 library(ggplot2)
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 3.4.4
+```
+
+```
+## 
+## Attaching package: 'ggplot2'
+```
+
+```
+## The following object is masked _by_ '.GlobalEnv':
+## 
+##     diamonds
+```
+
+```r
 library(dplyr)
+```
+
+```
+## Warning: package 'dplyr' was built under R version 3.4.4
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 setwd("C:/Training/Data Science/Course 5 Reproducible Research/Week 2/Project")
 act <- read.csv("activity.csv", header=TRUE, sep=",")
 head(act)
@@ -280,6 +329,13 @@ For this part the weekdays() function may be of some help here. Use the dataset 
 
 ```r
 newact <- mutate(newact, daytype = ifelse(weekdays(as.Date(newact$date))=="Saturday" | weekdays(as.Date(newact$date))=="Sunday", "Weekend", "Weekday"))
+```
+
+```
+## Warning: package 'bindrcpp' was built under R version 3.4.4
+```
+
+```r
 head(newact)
 ```
 
@@ -328,6 +384,11 @@ Observations:
 -------------
 From the steps pattern, it can be seen that this person walk most of the steps during the morning between 8 and 9 AM, while he/she walks more steps on averge during the weekend than the weekday.
 
+
+```r
+library(knitr)
+#knit("Course5Week2Project.Rmd")
+```
 
 The end of the assignment
 
